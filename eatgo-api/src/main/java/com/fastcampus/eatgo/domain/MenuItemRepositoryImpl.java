@@ -9,11 +9,11 @@ import java.util.List;
 public class MenuItemRepositoryImpl implements MenuItemRepository{
     private List<MenuItem> menuItems= new ArrayList<>();
 
-    MenuItemRepositoryImpl(){
+    public MenuItemRepositoryImpl(){
         menuItems.add(new MenuItem("Kimchi"));
     }
     @Override
-    public List<MenuItem> findAllByRestaurantId(int restaurantId) {
+    public List<MenuItem> findAllByRestaurantId(long restaurantId) {
         return menuItems;
     }
 }
