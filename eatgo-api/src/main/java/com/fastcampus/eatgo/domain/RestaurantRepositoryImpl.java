@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class RestaurantRepositoryImpl implements RestaurantRepository {
@@ -11,8 +12,8 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     private List<Restaurant> restaurants =new ArrayList<>();
 
     public RestaurantRepositoryImpl(){
-        restaurants.add(new Restaurant(1004, "Bob", "Seoul"));
-        restaurants.add(new Restaurant(2020, "CyberFood", "Seoul"));
+        restaurants.add(new Restaurant(1004L, "Bob", "Seoul"));
+        restaurants.add(new Restaurant(2020L, "CyberFood", "Seoul"));
 
     }
     @Override
@@ -23,10 +24,11 @@ public class RestaurantRepositoryImpl implements RestaurantRepository {
     }
 
     @Override
-    public Restaurant findById(int id) {
-        return restaurants.stream()
-                .filter(r -> r.getId()==id)
+    public Restaurant findById(long id) {
+        Restaurant restaurant = restaurants.stream()
+                .filter(r -> Objects.equals(r.getId(), id))
                 .findFirst()
                 .orElse(null);
+        return restaurant;
     }
 }
