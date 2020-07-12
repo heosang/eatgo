@@ -1,5 +1,6 @@
 package com.fastcampus.eatgo.interfaces;
 
+import com.fastcampus.eatgo.application.RestaurantService;
 import com.fastcampus.eatgo.domain.MenuItemRepository;
 import com.fastcampus.eatgo.domain.MenuItemRepositoryImpl;
 import com.fastcampus.eatgo.domain.RestaurantRepository;
@@ -23,6 +24,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class RestaurantControllerTest {
     @Autowired
     private MockMvc mvc;
+
+    @SpyBean(RestaurantService.class)
+    private RestaurantService restaurantService;
     @SpyBean(RestaurantRepositoryImpl.class)
     private RestaurantRepository restaurantRepository;
 
