@@ -6,10 +6,10 @@ import java.util.List;
 public class Restaurant {
     private final String name;
     private final String location;
-    private final int id;
-    private List<MenuItem> menuItems = new ArrayList<com.fastcampus.eatgo.domain.MenuItem>();
+    private final long id;
+    private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
-    public Restaurant(int id, String name, String location){
+    public Restaurant(long id, String name, String location){
         this.id=id;
         this.name=name;
         this.location=location;
@@ -27,19 +27,19 @@ public class Restaurant {
         return location;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
-    public List<com.fastcampus.eatgo.domain.MenuItem> getMenuItems(){
+    public List<MenuItem> getMenuItems(){
         return menuItems;
     }
 
-    public void addMenuItem(com.fastcampus.eatgo.domain.MenuItem menuItem) {
+    public void addMenuItem(MenuItem menuItem) {
         menuItems.add(menuItem);
     }
 
-    public void setMenuItems(List<com.fastcampus.eatgo.domain.MenuItem> menuItems) {
-        for(com.fastcampus.eatgo.domain.MenuItem menuItem: menuItems){
+    public void setMenuItems(List<MenuItem> menuItems) {
+        for(MenuItem menuItem: menuItems){
             addMenuItem(menuItem);
         }
     }
