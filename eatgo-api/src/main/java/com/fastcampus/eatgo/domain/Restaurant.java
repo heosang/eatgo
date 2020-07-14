@@ -4,32 +4,46 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    private final String name;
-    private final String location;
-    private final long id;
+    private String name;
+    private String address;
+    private long id;
     private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
-    public Restaurant(long id, String name, String location){
+    public Restaurant(){
+
+    }
+
+    public Restaurant(String name, String address) {
+        this.name=name;
+        this.address=address;
+    }
+
+    public Restaurant(long id, String name, String address){
         this.id=id;
         this.name=name;
-        this.location=location;
+        this.address=address;
+    }
+
+    public void setId(long id) {
+        this.id=id;
     }
 
     public String getName() {
         return name;
     }
-    public String getInformation(){
-        return name +" in "+ location;
 
+    public String getInformation(){
+        return name +" in "+ address;
     }
 
-    public String getLocation() {
-        return location;
+    public String getAddress() {
+        return address;
     }
 
     public long getId() {
         return id;
     }
+
     public List<MenuItem> getMenuItems(){
         return menuItems;
     }
