@@ -11,7 +11,7 @@ class RestaurantTest {
         Restaurant restaurant=new Restaurant(1004L,"Bob","Seoul");
         assertThat(restaurant.getId(), is(1004L));
         assertThat(restaurant.getName(), is("Bob"));
-        assertThat(restaurant.getLocation(),is("Seoul"));
+        assertThat(restaurant.getAddress(),is("Seoul"));
     }
     @Test
     public void information(){
