@@ -1,12 +1,17 @@
 package com.fastcampus.eatgo.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class Restaurant {
     private String name;
     private String address;
+    @Id
     private long id;
+    @Transient
     private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
     public Restaurant(){
